@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>Camilo Barber | Reserva tu cita</title>
+<style>
+:root{--bg:#080808;--panel:#121212;--line:#292929;--white:#f7f7f7;--muted:#aaa;--gold:#d6b16d;--green:#25d366}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{width:min(1100px,92%);margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}.pole{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold);font-size:22px}.brand b{letter-spacing:2px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:3px;margin-top:3px}
+.tag{border:1px solid #444;border-radius:30px;padding:9px 13px;font-size:12px;color:#ddd}
+.hero{padding:64px 0 48px;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.kicker{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:700}.hero h1{font-size:clamp(40px,7vw,76px);line-height:.98;letter-spacing:-3px;margin:17px 0}.hero h1 span{color:var(--gold)}.hero p{color:#c2c2c2;line-height:1.7;max-width:520px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border:0;border-radius:10px;padding:14px 18px;font-weight:800;cursor:pointer;font-size:14px}.primary{background:var(--gold);color:#111}.secondary{border:1px solid #444;color:#fff;background:transparent}
+.visual{min-height:320px;border:1px solid #343434;border-radius:22px;background:radial-gradient(circle at 50% 40%,#242424 0,#111 54%,#0b0b0b 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.visual:before,.visual:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff12;border-radius:50%}.visual:after{width:250px;height:250px}
+.logo-big{z-index:1;text-align:center}.logo-big .cb{font-family:Georgia,serif;font-size:110px;line-height:1;color:#eee;letter-spacing:-12px}.logo-big strong{display:block;letter-spacing:9px;font-size:20px;margin-left:8px}.logo-big small{color:var(--gold);letter-spacing:4px;font-size:10px}
+.info{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:60px}.info article{border:1px solid var(--line);background:var(--panel);padding:18px;border-radius:14px}.info .ico{font-size:22px}.info h3{margin:10px 0 5px;font-size:15px}.info p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.booking{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;padding:30px;border:1px solid #333;background:linear-gradient(135deg,#151515,#0d0d0d);border-radius:22px;margin-bottom:55px}.booking h2{font-size:32px;letter-spacing:-1px;margin:8px 0 12px}.booking .intro{color:var(--muted);line-height:1.65;font-size:14px}
+form label{display:block;font-size:13px;color:#ddd;margin:15px 0 7px}input,select{width:100%;background:#090909;border:1px solid #383838;border-radius:9px;color:#fff;padding:13px;font:inherit;outline:none}input:focus,select:focus{border-color:var(--gold)}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}.slot{background:#101010;border:1px solid #3a3a3a;border-radius:9px;padding:12px 5px;color:#fff;cursor:pointer;font-weight:700}.slot:hover{border-color:var(--gold)}.slot.selected{background:var(--gold);color:#111;border-color:var(--gold)}.slot:disabled{color:#686868;background:#191919;text-decoration:line-through;cursor:not-allowed;border-color:#242424}
+.hint{font-size:12px;color:var(--muted);margin-top:10px}.submit{width:100%;margin-top:18px;background:var(--green);color:#07140a}.status{margin-top:14px;padding:13px;border-radius:10px;display:none;line-height:1.5;font-size:13px}.status.ok{display:block;background:#10251a;border:1px solid #215c39}.status.err{display:block;background:#2a1717;border:1px solid #633030}
+footer{border-top:1px solid var(--line);padding:24px 0 35px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.note{color:#777;font-size:11px;line-height:1.5;margin:0 0 25px}
+@media(max-width:720px){.hero{grid-template-columns:1fr;padding:44px 0 30px}.visual{min-height:250px}.info{grid-template-columns:1fr}.booking{grid-template-columns:1fr;padding:20px}.hero h1{letter-spacing:-2px}.tag{display:none}.slots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <div class="brand"><div class="pole">✂</div><div><b>CAMILO BARBER</b><small>EL ESTILO EN LOS DETALLES</small></div></div>
+  <div class="tag">📍 Cali, Colombia</div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="kicker">Tu estilo, tu momento</div>
+      <h1>Un buen corte.<br><span>Otra actitud.</span></h1>
+      <p>Cortes y transformaciones con atención al detalle. Elige el día y la hora que más te convengan y reserva tu cita en unos pocos pasos.</p>
+      <div class="actions"><a class="btn primary" href="#reservar">RESERVAR CITA ↗</a><a class="btn secondary" href="https://wa.me/573052587113" target="_blank" rel="noopener">ESCRIBIR POR WHATSAPP</a></div>
+    </div>
+    <div class="visual"><div class="logo-big"><div class="cb">CB</div><strong>CAMILO</strong><small>BARBER</small></div></div>
+  </section>
+  <section class="info">
+    <article><div class="ico">🗓️</div><h3>Lunes a viernes</h3><p>Agenda de lunes a viernes, según disponibilidad.</p></article>
+    <article><div class="ico">⏰</div><h3>2:00 p. m. – 5:00 p. m.</h3><p>Cada cita dura 30 minutos. Último turno: 4:30 p. m.</p></article>
+    <article><div class="ico">💈</div><h3>Precio por corte</h3><p><strong style="color:#d6b16d;font-size:20px">$20.000 COP</strong><br>Pago por cada corte.</p></article>
+    <article><div class="ico">📍</div><h3>Estamos en Cali</h3><p>Carrera 38D # 2 Oeste – 20.</p></article>
+  </section>
+  <section class="booking" id="reservar">
+    <div>
+      <div class="kicker">Agenda online</div>
+      <h2>Reserva tu<br>próximo corte.</h2>
+      <p class="intro">Selecciona una fecha disponible y después elige uno de los horarios libres. Los turnos que ya estén ocupados aparecerán bloqueados.</p>
+      <p class="intro"><b>Precio:</b> $20.000 COP por corte.<br><b>Horario:</b> lunes a viernes, de 2:00 p. m. a 5:00 p. m.<br><b>Duración:</b> 30 minutos por corte.</p>
+      <a class="btn secondary" href="https://maps.google.com/?q=Carrera+38D+2+Oeste+20+Cali+Colombia" target="_blank" rel="noopener">VER UBICACIÓN ↗</a>
+    </div>
+    <div>
+      <form id="bookingForm">
+        <label for="date">1. Escoge el día</label>
+        <input id="date" name="date" type="date" required>
+        <div class="hint" id="dateHint">Elige un día de lunes a viernes.</div>
+        <label>2. Escoge una hora disponible</label>
+        <div class="slots" id="slots"></div>
+        <input type="hidden" id="time" required>
+        <label for="name">3. Tu nombre</label>
+        <input id="name" name="name" maxlength="70" placeholder="Nombre y apellido" required>
+        <label for="phone">Tu número de contacto</label>
+        <input id="phone" name="phone" type="tel" maxlength="20" placeholder="Tu celular" required>
+        <button class="btn submit" type="submit">CONFIRMAR Y ENVIAR POR WHATSAPP</button>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+        <p class="hint">Al confirmar, se abrirá WhatsApp con los datos de tu cita para enviarlos a Camilo Barber.</p>
+      </form>
+    </div>
+  </section>
+  <p class="note">Importante: esta versión guarda las reservas en este navegador y dispositivo. Para que todos los clientes vean los mismos turnos ocupados desde sus propios celulares, la página debe conectarse a una base de datos o sistema de reservas en línea.</p>
+</main>
+<footer class="wrap"><span>© Camilo Barber · Cali, Colombia</span><span>Reserva con anticipación ✂</span></footer>
+<script>
+const dateInput=document.getElementById('date');
+const slotsEl=document.getElementById('slots');
+const timeInput=document.getElementById('time');
+const statusEl=document.getElementById('status');
+const dateHint=document.getElementById('dateHint');
+const form=document.getElementById('bookingForm');
+const KEY='camiloBarberBookings_v1';
+const times=['14:00','14:30','15:00','15:30','16:00','16:30'];
+const fmt=t=>{let [h,m]=t.split(':').map(Number);const ap=h>=12?'p. m.':'a. m.';h=h%12||12;return `${h}:${String(m).padStart(2,'0')} ${ap}`};
+const readBookings=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return {}}};
+const localDateString=d=>{const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`};
+dateInput.min=localDateString(new Date());
+dateInput.value=dateInput.min;
+function renderSlots(){
+  slotsEl.innerHTML='';timeInput.value='';
+  const date=dateInput.value;
+  if(!date){dateHint.textContent='Elige un día de lunes a viernes.';return}
+  const day=new Date(date+'T12:00:00').getDay();
+  if(day===0||day===6){dateHint.textContent='Ese día no hay atención. Escoge de lunes a viernes.';times.forEach(t=>{const b=document.createElement('button');b.type='button';b.className='slot';b.disabled=true;b.textContent=fmt(t);slotsEl.appendChild(b)});return}
+  dateHint.textContent='Los horarios ocupados no se pueden seleccionar.';
+  const bookings=readBookings()[date]||[];
+  times.forEach(t=>{
+    const b=document.createElement('button');b.type='button';b.className='slot';b.textContent=fmt(t);
+    if(bookings.some(x=>x.time===t)){b.disabled=true;b.textContent=fmt(t)+' · Ocupada'}
+    b.addEventListener('click',()=>{document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');timeInput.value=t;statusEl.className='status';statusEl.textContent=''});
+    slotsEl.appendChild(b);
+  });
+}
+dateInput.addEventListener('change',renderSlots);
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const date=dateInput.value,time=timeInput.value,name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim();
+ statusEl.className='status';
+ if(!date||!time||!name||!phone){statusEl.className='status err';statusEl.textContent='Completa tus datos y selecciona un horario libre.';return}
+ const day=new Date(date+'T12:00:00').getDay();
+ if(day===0||day===6){statusEl.className='status err';statusEl.textContent='Solo se atiende de lunes a viernes.';return}
+ const all=readBookings();all[date]=all[date]||[];
+ if(all[date].some(x=>x.time===time)){statusEl.className='status err';statusEl.textContent='Ese horario acaba de ocuparse. Escoge otro turno.';renderSlots();return}
+ all[date].push({time,name,phone,createdAt:new Date().toISOString()});
+ localStorage.setItem(KEY,JSON.stringify(all));
+ const [yy,mm,dd]=date.split('-');
+ const msg=`Hola Camilo Barber 👋 Quiero reservar una cita.%0A%0A👤 Nombre: ${encodeURIComponent(name)}%0A📅 Fecha: ${dd}/${mm}/${yy}%0A⏰ Hora: ${encodeURIComponent(fmt(time))}%0A📱 Mi contacto: ${encodeURIComponent(phone)}%0A%0A¿Me confirmas la cita, por favor?`;
+ statusEl.className='status ok';statusEl.textContent=`Turno ${fmt(time)} reservado en este dispositivo. Se abrirá WhatsApp para enviar los datos.`;
+ renderSlots();
+ const wa='https://wa.me/573052587113?text='+msg;
+ window.open(wa,'_blank','noopener');
+});
+renderSlots();
+</script>
+</body>
+</html>
